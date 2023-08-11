@@ -1,12 +1,16 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
+
 /**
- * main function  - checks the sign of randomly generated number
- * @n : represents the rondamly generated number
- * Description: checks if a random generated number is +ve or -ve or zero
- * Return: 0 - always success
+ * main - determine if number is positive or negative
+ *
+ * Description: program will assign a random number to a variable n
+ * and determines if it is positive or negative or zero
+ *
+ * Return: Always 0 (Success)
  */
+
 int main(void)
 {
 	int n;

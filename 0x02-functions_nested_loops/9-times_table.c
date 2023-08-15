@@ -17,14 +17,16 @@ void times_table(void)
 			cross_next = i * (j + 1);
 			if (cross_next <= 9)
 			{	_putchar(cross + '0');
-				if (j < 9)
+				if (j < 9 )
 				{
 				_putchar(',');
 				_putchar(' ');
 				_putchar(' '); }
 			}
 			else
-			{	_putchar(cross / 10 + '0');
+			{
+				if (cross > 9)
+				_putchar(cross / 10 + '0');
 				_putchar(cross % 10 + '0');
 				if (j < 9)
 				{_putchar(',');

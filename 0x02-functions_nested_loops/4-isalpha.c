@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * int _isalpha-  checks if input is alphabet;
+ *_isalpha - checks if input is alphabet
  *@c : the ascii code of the passed char
  *
  * Return: (1) if c is a letter and (0) otherwise

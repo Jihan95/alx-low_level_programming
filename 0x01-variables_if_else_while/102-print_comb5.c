@@ -18,12 +18,15 @@ for (k = 0; k <= 9; k++)
 {
 for (l = 1; l <= 9; l++)
 {
+if (i <= j && k <=l)
+{
 putchar ('0' + i);
 putchar ('0' + j);
 putchar (' ');
 putchar ('0' + k);
 putchar ('0' + l);
-if (!(i == 9 && j == 8 && k == 9 && l == 9))
+}
+else if (!(i == 9 && j == 8 && k == 9 && l == 9))
 {putchar (',');
 putchar (' ');
 }

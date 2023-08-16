@@ -15,17 +15,17 @@ int main(void)
 	long int first = 1;
 	long int second = 2;
 	long int next = first + second;
-
-	printf("%ld, ", second);
+	long int sum = 2;
 
 	while (next <= 4000000)
 	{
 		if (next % 2 == 0)
 		{
-			printf("%ld, ", second);
+			sum = sum + next;
 		}
 		first = second;
 		second = next;
 		next = first + second;
 	}
+	printf("%ld\n", sum);
 return (0); }

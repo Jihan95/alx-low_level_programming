@@ -9,7 +9,7 @@ void print_times_table(int n)
 {
 	int i, j, cross, cross_next;
 
-	if (n > 0 && n <= 15)
+	if (n >= 0 && n <= 15)
 	{
 		for (i = 0; i <= n; i++)
 		{
@@ -24,8 +24,7 @@ void print_times_table(int n)
 					_putchar(',');
 					_putchar(' ');
 					_putchar(' ');
-					_putchar(' '); }
-				}
+					_putchar(' '); } }
 				else if (cross > 9 && cross_next <= 99)
 				{
 					_putchar(cross / 10 + '0');
@@ -43,9 +42,5 @@ void print_times_table(int n)
 					if (j < n)
 					{
 						_putchar(',');
-						_putchar(' '); }
-				}
-			}
-		_putchar('\n'); }
-	}
-}
+						_putchar(' '); } } }
+		_putchar('\n'); } } }

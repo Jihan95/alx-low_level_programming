@@ -16,7 +16,7 @@ void print_times_table(int n)
 			for (j = 0; j <= n; j++)
 			{	cross = i * j;
 				cross_next = i * (j + 1);
-				if (cross < 9 && cross_next <= 9)
+				if (cross <= 9 && cross_next <= 9)
 				{
 					_putchar(cross + '0');
 					if (j < n)
@@ -26,7 +26,7 @@ void print_times_table(int n)
 					_putchar(' ');
 					_putchar(' '); }
 				}
-				else if (((cross < 9) && (cross_next > 9)) || ((cross > 9) && (cross < 99) && (cross_next <= 99)))
+				else if (cross > 9 && cross_next <= 99)
 				{
 					_putchar(cross / 10 + '0');
 					_putchar(cross % 10 + '0');

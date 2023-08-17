@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _digit -  checks if input is a digit
+ * _isdigit -  checks if input is a digit
  *@c : the ascii code of the passed char
  *
  * Return: (1) if c is digit and (0) otherwise

@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * _strdup - copy a given string to a new located part at memory
@@ -13,7 +14,7 @@ char *_strdup(char *str)
 	char *p, *pos = str;
 	int i, str_length = 0;
 
-	while(*pos != '\0')
+	while (*pos != '\0')
 	{
 		pos += 1;
 		str_length += 1;
@@ -24,7 +25,7 @@ char *_strdup(char *str)
 	if (p == NULL)
 		return (NULL);
 
-	if (str != NULL)
+	if (str != NULL || !str)
 	{
 		for (i = 0; i < str_length; i++)
 			*(p + i) = *(str + i);

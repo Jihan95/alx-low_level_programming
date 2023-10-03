@@ -20,18 +20,12 @@ char *_strdup(char *str)
 		str_length += 1;
 	}
 
-	p = (char *) malloc(str_length * sizeof(char));
+	p = (char *) malloc(str_length * sizeof(char) + 1);
 
-	if (p == NULL)
+	if (p == NULL || str == NULL)
 		return (NULL);
 
-	if (str != NULL)
-	{
-		for (i = 0; i < str_length; i++)
-			*(p + i) = *(str + i);
-		return (p);
-
-	}
-	else
-		return (NULL);
+	for (i = 0; i < str_length; i++)
+		*(p + i) = *(str + i);
+	return (p);
 }

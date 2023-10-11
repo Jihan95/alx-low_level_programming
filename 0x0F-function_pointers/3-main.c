@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 	ptrop = get_op_func(operator);
-	if (ptrop == NULL || operator[0] == '\0')
+	if (ptrop == NULL || operator[1] != '\0')
 	{
 		printf("Error\n");
 		exit(99);

@@ -12,7 +12,9 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	va_list allNumbers;
 
 	if (n == 0)
-		return;
+	{
+		printf("\n");
+		return; }
 	va_start(allNumbers, n);
 	for (i = 0; i < n; i++)
 	{

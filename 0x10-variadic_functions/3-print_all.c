@@ -13,8 +13,7 @@ void print_all(const char * const format, ...)
 
 	formatlen = strlen(format);
 	formatCpy = (char *)malloc(formatlen + 1);
-	if (formatCpy != NULL)
-		strcpy(formatCpy, format);
+	strcpy(formatCpy, format);
 	va_start(allargs, format);
 	while (*formatCpy)
 	{

@@ -1,6 +1,6 @@
 #include "variadic_functions.h"
 
- /**
+/**
   * print_all - prints passed arguments
   * @format: is a list of types of arguments passed to the function
   */
@@ -8,14 +8,9 @@
 void print_all(const char * const format, ...)
 {
 	size_t formatlen;
-	char *formatCpy;
+	char *formatCpy, *str;
 	va_list allargs;
 
-	if (format == NULL)
-	{
-		printf("\n");
-		return;
-	}
 	formatlen = strlen(format);
 	formatCpy = (char *)malloc(formatlen + 1);
 	if (formatCpy != NULL)
@@ -35,7 +30,10 @@ void print_all(const char * const format, ...)
 				printf("%f", va_arg(allargs, double));
 				break;
 			case 's':
-				printf("%s", va_arg(allargs, char *));
+				str = va_arg(allargs, char *);
+				if (str == NULL)
+					printf("(nil)");
+				printf("%s", str);
 				break;
 			default:
 				formatCpy++;

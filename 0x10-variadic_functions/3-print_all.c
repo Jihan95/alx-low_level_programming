@@ -1,47 +1,50 @@
 #include "variadic_functions.h"
 
 /**
-  * print_all - prints passed arguments
-  * @format: is a list of types of arguments passed to the function
-  */
+ * print_all - prints anything
+ * @format: is a list of types of arguments passed to the function
+ */
 
 void print_all(const char * const format, ...)
 {
-	size_t formatlen;
-	char *formatCpy, *str;
-	va_list allargs;
+	va_list args;
+	char c;
+	int i;
+	float f;
+	char *s;
+	char current_format;
+	int printed = 0, k = 1;
 
-	formatlen = strlen(format);
-	formatCpy = (char *)malloc(formatlen + 1);
-	if (formatCpy != NULL)
-		strcpy(formatCpy, format);
-	va_start(allargs, format);
-	while (*formatCpy)
+	va_start(args, format);
+	current_format = *format;
+	while ((current_format) != '\0')
 	{
-		switch (*formatCpy)
-		{
-			case 'c':
-				printf("%c", va_arg(allargs, int));
-				break;
-			case 'i':
-				printf("%d", va_arg(allargs, int));
-				break;
-			case 'f':
-				printf("%f", va_arg(allargs, double));
-				break;
-			case 's':
-				str = va_arg(allargs, char *);
-				if (str == NULL)
-					printf("(nil)");
-				printf("%s", str);
-				break;
-			default:
-				formatCpy++;
-				continue; }
-		if (*(formatCpy + 1))
+		if (printed >= 1)
 			printf(", ");
-		formatCpy++;
-	}
-	printf("\n");
-	va_end(allargs);
-}
+		if (current_format == 'c')
+		{
+			c = va_arg(args, int);
+			printf("%c", c);
+			printed++; }
+		else if (current_format == 'i')
+		{
+			i = va_arg(args, int);
+			printf("%d", i);
+			printed++; }
+		else if (current_format == 'f')
+		{
+			f = va_arg(args, double);
+			printf("%f", f);
+			printed++; }
+		else if (current_format == 's')
+		{
+			s = va_arg(args, char *);
+			if (s == NULL)
+				printf("(nil)");
+			else
+			printf("%s", s);
+			printed++; }
+	current_format = *(format + k);
+	k++; }
+	va_end(args);
+	printf("\n"); }

@@ -16,14 +16,14 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 
 	if ((size_t)index >= len)
 		return (-1);
-	if (head == NULL)
+	if (head == NULL || *head ==NULL)
 		return (-1);
-	previous = *head;
-	current = (*head)->next;
+	previous = NULL;
+	current = *head;
 	if (index == 0)
 	{
-		*head = current;
-		free(previous);
+		*head = current->next;
+		free(current);
 		return(1);
 	}
 	for (i = 1; i < index; i++)

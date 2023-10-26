@@ -9,7 +9,7 @@
 int get_endianness(void)
 {
 	int num = 0x01;
-	unsigned char * byteptr = (unsigned char *) &num;
+	unsigned char *byteptr = (unsigned char *) &num;
 
 	if (byteptr[0] == 0x01)
 		return (1);

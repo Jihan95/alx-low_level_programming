@@ -18,7 +18,7 @@ int main(int ac, char *av[])
 
 	if (ac != 3)
 	{
-		fprintf(stderr, "Usage: %s file_from file_to\n", av[0]);
+		fprintf(stderr, "Usage: file_from file_to\n");
 		exit(97);
 	}
 	if (access(av[1], R_OK) == 0)
@@ -42,12 +42,12 @@ int main(int ac, char *av[])
 			_exit2(av[2]);
 		if (close(fd_from) != 0)
 		{
-			fprintf(stderr, "Error: Can't close fd %d", fd_from);
+			fprintf(stderr, "Error: Can't close fd %d\n", fd_from);
 			exit(100);
 		}
 		if (close(fd_to) != 0)
 		{
-			fprintf(stderr, "Error: Can't close fd %d", fd_to);
+			fprintf(stderr, "Error: Can't close fd %d\n", fd_to);
 			exit(100);
 		}
 	}

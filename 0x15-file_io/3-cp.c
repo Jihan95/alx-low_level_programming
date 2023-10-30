@@ -18,7 +18,7 @@ int main(int ac, char *av[])
 
 	if (ac != 3)
 	{
-		fprintf(stderr, "Usage: file_from file_to\n");
+		fprintf(stderr, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	if (access(av[1], R_OK) == 0)

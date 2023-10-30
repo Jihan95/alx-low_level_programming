@@ -40,12 +40,12 @@ int main(int ac, char *av[])
 				_exit2(av[2]); }
 		if (rBytes == -1)
 			_exit2(av[2]);
-		if (close(fd_from) != 0)
+		if (close(fd_from) == -1)
 		{
 			fprintf(stderr, "Error: Can't close fd %d\n", fd_from);
 			exit(100);
 		}
-		if (close(fd_to) != 0)
+		if (close(fd_to) == -1)
 		{
 			fprintf(stderr, "Error: Can't close fd %d\n", fd_to);
 			exit(100);

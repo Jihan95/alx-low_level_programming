@@ -23,7 +23,7 @@ void hash_table_print(const hash_table_t *ht)
 		{
 			if (flag == 0)
 				printf(", ");
-			printf("/'%s/': /'%s/'", item->key, item->value);
+			printf("'%s': '%s'", item->key, item->value);
 			item = item->next;
 			flag = 0; }
 		i++; }

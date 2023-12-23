@@ -39,6 +39,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (1); }
 	if (strcmp(current_item->key, key) == 0)
 	{
+		if (current_item->value != NULL)
+			free(current_item->value);
 		current_item->value = strdup(value);
 		if (current_item->value == NULL)
 			return (0);
